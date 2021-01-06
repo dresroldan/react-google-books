@@ -1,5 +1,6 @@
 // required dependencies
 const express = require("express");
+const routes = require("./routes");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
@@ -31,7 +32,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB"));
 
 // API routes defined here
-const routes = require("./routes");
 app.use(routes);
 
 // Send every other request to the React app

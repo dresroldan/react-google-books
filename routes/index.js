@@ -1,9 +1,13 @@
 const path = require("path");
 const router = require("express").Router();
-const apiRoutes = require("./api");
+const bookRoutes = require("./books");
+const googleRoutes = require("./google");
 
-// API Routes
-router.use("/api", apiRoutes);
+// Book routes
+router.use("/books", bookRoutes);
+
+// Google Routes
+router.use("/google", googleRoutes);
 
 router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
